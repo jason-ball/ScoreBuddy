@@ -24,7 +24,7 @@ public class StatsActivity extends AppCompatActivity {
         });
     }
     public void hBackClick(){
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);
     }
 }
