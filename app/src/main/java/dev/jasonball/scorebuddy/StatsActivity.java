@@ -3,6 +3,7 @@ package dev.jasonball.scorebuddy;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 public class StatsActivity extends AppCompatActivity {
 
@@ -10,5 +11,7 @@ public class StatsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
+
+        Button b1 = findViewById(R.id.back_home);
     }
 }
