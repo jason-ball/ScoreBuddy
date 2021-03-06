@@ -10,5 +10,7 @@
     <string name="default_score">0</string>
     <string name="edit_icon_alt_text">Edit Icon</string>
     <string name="update_name_dialog_title">Update %1$s\'s Name</string>
-
+    <string name="add_score_dialog_title">Add Hole %1$d Score</string>
+    <string name="add_score_dialog_player_name">%1$s\'s Score</string>
+    <string name="reset_button">Reset</string>
 </resources>

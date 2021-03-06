@@ -208,19 +208,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <View
-        android:id="@+id/scoreDivider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toTopOf="@+id/scoreTable"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerA" />
-
 
     <Button
         android:id="@+id/addScoreButton"
@@ -229,14 +216,27 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:onClick="addScoreButtonPressed"
         android:text="@string/add_score_button"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/resetButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Add Hole 5 Score" />
+
+    <View
+        android:id="@+id/scoreDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Add Hole 5 Score"/>
+        app:layout_constraintTop_toBottomOf="@+id/playerA" />
 
-    <TableLayout
-        android:id="@+id/scoreTable"
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -246,49 +246,84 @@
         app:layout_constraintBottom_toTopOf="@+id/addScoreButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scoreDivider"
-        android:stretchColumns="0,1,2,3,4">
+        app:layout_constraintTop_toBottomOf="@+id/scoreDivider">
 
-        <TableRow
-            android:id="@+id/scoreHeaderRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                android:text="@string/score_table_hole_header"
-                android:textAlignment="textStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+            <TableLayout
+                android:id="@+id/scoreTable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:stretchColumns="0,1,2,3,4">
 
-            <TextView
-                android:id="@+id/scoreTablePlayerAName"
-                android:text="@string/player_a_default_name"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                tools:text="Jason" />
+                <TableRow
+                    android:id="@+id/scoreHeaderRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/scoreTablePlayerBName"
-                android:text="@string/player_b_default_name"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                tools:text="Christian" />
+                    <TextView
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:text="@string/score_table_hole_header"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <TextView
-                android:id="@+id/scoreTablePlayerCName"
-                android:text="@string/player_c_default_name"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                tools:text="Andre" />
+                    <TextView
+                        android:id="@+id/scoreTablePlayerAName"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:text="@string/player_a_default_name"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        tools:text="Jason" />
 
-            <TextView
-                android:id="@+id/scoreTablePlayerDName"
-                android:text="@string/player_d_default_name"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                tools:text="Devin" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/scoreTablePlayerBName"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:text="@string/player_b_default_name"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        tools:text="Christian" />
+
+                    <TextView
+                        android:id="@+id/scoreTablePlayerCName"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:text="@string/player_c_default_name"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        tools:text="Andre" />
+
+                    <TextView
+                        android:id="@+id/scoreTablePlayerDName"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:text="@string/player_d_default_name"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        tools:text="Devin" />
+                </TableRow>
 
 
-    </TableLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/reset_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/addScoreButton"
+        app:layout_constraintTop_toTopOf="@+id/addScoreButton"
+        android:onClick="resetButtonPressed"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
