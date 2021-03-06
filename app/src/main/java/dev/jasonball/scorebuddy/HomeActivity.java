@@ -18,7 +18,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        logout = findViewById(R.id.button);
+        logout = findViewById(R.id.bLogout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
