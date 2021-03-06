@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ScoreBuddy</string>
+    <string name="hole_header">Hole %1$d of %2$d</string>
+    <string name="add_score_button">Add Hole %1$d Score</string>
+    <string name="player_a_default_name">Player A</string>
+    <string name="player_b_default_name">Player B</string>
+    <string name="player_c_default_name">Player C</string>
+    <string name="player_d_default_name">Player D</string>
+    <string name="score_table_hole_header">Hole</string>
+
 </resources>
