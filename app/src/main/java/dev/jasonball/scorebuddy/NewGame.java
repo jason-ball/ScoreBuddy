@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewGame extends AppCompatActivity {
+    private static final int MAX_HOLES = 18;
+
     private TextView holeHeaderLabel;
 
     private TextView playerAScoreLabel;
@@ -88,7 +90,7 @@ public class NewGame extends AppCompatActivity {
     }
 
     private void updateHeader(int hole) {
-        updateHeader(hole, 18);
+        updateHeader(hole, MAX_HOLES);
     }
 
     private void updateScoreButton(int hole) {
@@ -111,10 +113,10 @@ public class NewGame extends AppCompatActivity {
     }
 
     private void reset() {
-        setPlayerAName(getString(R.string.player_a_default_name));
+        /*setPlayerAName(getString(R.string.player_a_default_name));
         setPlayerBName(getString(R.string.player_b_default_name));
         setPlayerCName(getString(R.string.player_c_default_name));
-        setPlayerDName(getString(R.string.player_d_default_name));
+        setPlayerDName(getString(R.string.player_d_default_name));*/
 
         setPlayerAScore(0);
         setPlayerBScore(0);
@@ -122,6 +124,7 @@ public class NewGame extends AppCompatActivity {
         setPlayerDScore(0);
 
         setHoleNumber(1);
+        addScoreButton.setEnabled(true);
 
         for (TableRow row : scoreRows) {
             scoreTable.removeView(row);
@@ -167,7 +170,12 @@ public class NewGame extends AppCompatActivity {
             setPlayerCScore(playerCScore + scoreC);
             setPlayerDScore(playerDScore + scoreD);
             addScoreRow(scoreA, scoreB, scoreC, scoreD);
-            setHoleNumber(holeNumber + 1);
+            if (holeNumber == MAX_HOLES) {
+                addScoreButton.setText(R.string.doneButton);
+                addScoreButton.setEnabled(false);
+            } else {
+                setHoleNumber(holeNumber + 1);
+            }
         });
         builder.setNegativeButton("Cancel", ((dialog, which) -> dialog.cancel()));
 
