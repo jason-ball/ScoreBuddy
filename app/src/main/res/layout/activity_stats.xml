@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background=""
+    tools:context=".StatsActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="40sp"
+        android:layout_height="match_parent"
+        android:rowCount="4"
+        android:columnCount="1"
+        >
+
+        <TextView
+            android:id="@+id/view1"
+            android:textColor="@color/black"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:textSize="22sp"
+            android:text="\n\n\n\nBest Score:\n15 Points on May 15th, 2020"
+            android:textAlignment="center"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/view2"
+            android:textColor="@color/black"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:textSize="22sp"
+            android:text="\n\n\Worst Score:\n50 Points on January 1st, 2021"
+            android:textAlignment="center"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/view3"
+            android:layout_gravity="fill"
+            android:textColor="@color/black"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:textSize="22sp"
+            android:text="\nAverage Score:\n22.2 points per game"
+            android:textAlignment="center"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/view4"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:textSize="18sp"
+            android:text="                 "
+            android:textAlignment="center"
+            >
+        </TextView>
+    </GridLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="1"
+        android:columnCount="2"
+        android:translationY="300dp"
+        >
+        <Button
+            android:id="@+id/back_home"
+            android:text="← back"
+            android:layout_width="wrap_content"
+            android:layout_height="86dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10sp"
+            android:textSize="18sp">
+
+        </Button>
+        <Button
+            android:id="@+id/reset"
+            android:text="reset"
+            android:layout_width="wrap_content"
+            android:layout_height="86dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10sp"
+            android:textSize="18sp">
+
+        </Button>
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
