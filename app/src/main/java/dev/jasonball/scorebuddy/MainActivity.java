@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         eTEmail = findViewById(R.id.etEmail);
-        eTPassword = findViewById(R.id.etEmail);
+        eTPassword = findViewById(R.id.etPassword);
 
 
         loginButton = findViewById(R.id.bLogin);
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 userEmail = eTEmail.getText().toString();
-                userPassword = eTPassword.getText().toString();
+                userPassword = eTPassword.getText().toString().trim();
                 loginUser(userEmail, userPassword);
             }
         });
