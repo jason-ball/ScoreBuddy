@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/bNewGame"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="75dp"
+        android:text="New Game"
+        app:layout_constraintBottom_toTopOf="@+id/bFriends"
+        app:layout_constraintEnd_toStartOf="@+id/bProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bFriends"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="76dp"
+        android:text="Friends"
+        app:layout_constraintBottom_toTopOf="@+id/bGameHistory"
+        app:layout_constraintEnd_toStartOf="@+id/bStatsProgress"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bStatsProgress"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="76dp"
+        android:text="Stats and Progress"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/bLogout"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/bLogout"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="140dp"
+        android:text="Log Out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/bGameHistory"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="140dp"
+        android:text="Game History"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bLogout"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="75dp"
+        android:text="Profile"
+        app:layout_constraintBottom_toTopOf="@+id/bStatsProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
