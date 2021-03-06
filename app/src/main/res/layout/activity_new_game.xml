@@ -35,17 +35,33 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"
+            android:text="@string/default_score"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
             tools:text="88" />
 
-        <TextView
-            android:id="@+id/playerANameLabel"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/player_a_default_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            tools:text="Jason" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/playerANameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/player_a_default_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:text="Jason" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/edit_icon_alt_text"
+                app:srcCompat="@drawable/ic_baseline_edit_24"/>
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -65,17 +81,33 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"
+            android:text="@string/default_score"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
             tools:text="88" />
 
-        <TextView
-            android:id="@+id/playerBNameLabel"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/player_b_default_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            tools:text="Christian" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/playerBNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/player_b_default_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:text="Christian" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/edit_icon_alt_text"
+                app:srcCompat="@drawable/ic_baseline_edit_24"/>
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -95,17 +127,32 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"
+            android:text="@string/default_score"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
             tools:text="88" />
 
-        <TextView
-            android:id="@+id/playerCNameLabel"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/player_c_default_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            tools:text="Andre" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/playerCNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/player_c_default_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:text="Andre" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/edit_icon_alt_text"
+                app:srcCompat="@drawable/ic_baseline_edit_24"/>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -125,17 +172,32 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"
+            android:text="@string/default_score"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
             tools:text="88" />
 
-        <TextView
-            android:id="@+id/playerDNameLabel"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/player_d_default_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            tools:text="Devin" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/playerDNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/player_d_default_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:text="Devin" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/edit_icon_alt_text"
+                app:srcCompat="@drawable/ic_baseline_edit_24"/>
+        </LinearLayout>
     </LinearLayout>
 
     <View
@@ -153,7 +215,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addScoreButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -163,7 +225,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Add Hole 5 Score" />
+        tools:text="Add Hole 5 Score"/>
 
     <TableLayout
         android:id="@+id/scoreTable"
@@ -173,7 +235,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/addScoreButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scoreDivider"
@@ -186,26 +248,35 @@
 
             <TextView
                 android:text="@string/score_table_hole_header"
-                android:textAlignment="textStart" />
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <TextView
+                android:id="@+id/scoreTablePlayerAName"
                 android:text="@string/player_a_default_name"
                 android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 tools:text="Jason" />
 
             <TextView
+                android:id="@+id/scoreTablePlayerBName"
                 android:text="@string/player_b_default_name"
                 android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 tools:text="Christian" />
 
             <TextView
+                android:id="@+id/scoreTablePlayerCName"
                 android:text="@string/player_c_default_name"
                 android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 tools:text="Andre" />
 
             <TextView
+                android:id="@+id/scoreTablePlayerDName"
                 android:text="@string/player_d_default_name"
                 android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 tools:text="Devin" />
         </TableRow>
 

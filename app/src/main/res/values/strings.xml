@@ -7,5 +7,7 @@
     <string name="player_c_default_name">Player C</string>
     <string name="player_d_default_name">Player D</string>
     <string name="score_table_hole_header">Hole</string>
+    <string name="default_score">0</string>
+    <string name="edit_icon_alt_text">Edit Icon</string>
 
 </resources>
