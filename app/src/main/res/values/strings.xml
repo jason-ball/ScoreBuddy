@@ -9,5 +9,6 @@
     <string name="score_table_hole_header">Hole</string>
     <string name="default_score">0</string>
     <string name="edit_icon_alt_text">Edit Icon</string>
+    <string name="update_name_dialog_title">Update %1$s\'s Name</string>
 
 </resources>

@@ -40,8 +40,10 @@
             tools:text="88" />
 
         <LinearLayout
+            android:id="@+id/playerANameGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="updatePlayerNamePressed"
             android:orientation="horizontal">
 
             <TextView
@@ -56,10 +58,10 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="18dp"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:contentDescription="@string/edit_icon_alt_text"
-                app:srcCompat="@drawable/ic_baseline_edit_24"/>
+                app:srcCompat="@drawable/ic_baseline_edit_24" />
         </LinearLayout>
 
     </LinearLayout>
@@ -86,8 +88,10 @@
             tools:text="88" />
 
         <LinearLayout
+            android:id="@+id/playerBNameGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="updatePlayerNamePressed"
             android:orientation="horizontal">
 
             <TextView
@@ -102,10 +106,10 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="18dp"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:contentDescription="@string/edit_icon_alt_text"
-                app:srcCompat="@drawable/ic_baseline_edit_24"/>
+                app:srcCompat="@drawable/ic_baseline_edit_24" />
         </LinearLayout>
 
     </LinearLayout>
@@ -132,8 +136,10 @@
             tools:text="88" />
 
         <LinearLayout
+            android:id="@+id/playerCNameGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="updatePlayerNamePressed"
             android:orientation="horizontal">
 
             <TextView
@@ -148,10 +154,10 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="18dp"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:contentDescription="@string/edit_icon_alt_text"
-                app:srcCompat="@drawable/ic_baseline_edit_24"/>
+                app:srcCompat="@drawable/ic_baseline_edit_24" />
         </LinearLayout>
     </LinearLayout>
 
@@ -177,8 +183,10 @@
             tools:text="88" />
 
         <LinearLayout
+            android:id="@+id/playerDNameGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="updatePlayerNamePressed"
             android:orientation="horizontal">
 
             <TextView
@@ -193,10 +201,10 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="18dp"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:contentDescription="@string/edit_icon_alt_text"
-                app:srcCompat="@drawable/ic_baseline_edit_24"/>
+                app:srcCompat="@drawable/ic_baseline_edit_24" />
         </LinearLayout>
     </LinearLayout>
 
