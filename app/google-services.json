@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "180194237018",
+    "project_id": "scorebuddy-f3a48",
+    "storage_bucket": "scorebuddy-f3a48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180194237018:android:4480baf3b7939f9b961663",
+        "android_client_info": {
+          "package_name": "dev.jasonball.scorebuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180194237018-661t3nie5im0cc3d0el9go4kbdtcoha2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkieQnABavi2jjQoYWOS0bsfe6MVZdPrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180194237018-661t3nie5im0cc3d0el9go4kbdtcoha2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
