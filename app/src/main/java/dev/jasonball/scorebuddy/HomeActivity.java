@@ -13,6 +13,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private Button logout;
     private Button newGame;
+    private Button friends;
+    private Button profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        friends = findViewById(R.id.bFriends);
+        friends.setOnClickListener(view -> startFriendsActivity());
+
+        profile = findViewById(R.id.bProfile);
+        profile.setOnClickListener(view -> startProfileActivity());
+
     }
 
     public void logoutUser(){
@@ -45,6 +53,16 @@ public class HomeActivity extends AppCompatActivity {
 
     public void launchNewGame(){
         Intent intent = new Intent(HomeActivity.this, NewGame.class);
+        startActivity(intent);
+    }
+
+    private void startFriendsActivity() {
+        Intent intent = new Intent(this, FriendPage.class);
+        startActivity(intent);
+    }
+
+    private void startProfileActivity() {
+        Intent intent = new Intent(this, ProfilePage.class);
         startActivity(intent);
     }
 }
