@@ -26,7 +26,7 @@ public class HistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stats);
+        setContentView(R.layout.activity_history);
 
         Button hBack = findViewById(R.id.hBack);
         Button hReset = findViewById(R.id.reset);

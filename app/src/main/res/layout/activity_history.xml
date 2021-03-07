@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background=""
-    tools:context=".StatsActivity">
+    tools:context=".HistoryActivity">
 
     <GridLayout
         android:layout_width="match_parent"
@@ -31,7 +30,6 @@
 
         <TextView
             android:id="@+id/game1"
-            android:textAppearance=""
             android:textColor="@color/black"
             android:layout_gravity="fill"
             android:layout_columnWeight="1"
