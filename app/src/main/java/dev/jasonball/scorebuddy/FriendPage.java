@@ -27,7 +27,7 @@ public class FriendPage extends AppCompatActivity
     
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_friend_page);
 
         listview=(ListView)findViewById(R.id.lv);
         list = getResources().getStringArray(R.array.list);
