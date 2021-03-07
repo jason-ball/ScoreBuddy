@@ -30,6 +30,8 @@
         </activity>
         <activity android:name=".FriendPage" />
         <activity android:name=".ProfilePage" />
+        <activity android:name=".StatsActivity" />
+        <activity android:name=".HistoryActivity" />
     </application>
 
 </manifest>

@@ -15,6 +15,8 @@ public class HomeActivity extends AppCompatActivity {
     private Button newGame;
     private Button friends;
     private Button profile;
+    private Button stats;
+    private Button history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,22 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 logoutUser();
+            }
+        });
+
+         stats = findViewById(R.id.bStatsProgress);
+         stats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                statsClick();
+            }
+        });
+
+        history = findViewById(R.id.bGameHistory);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                historyClick();
             }
         });
 
@@ -43,6 +61,15 @@ public class HomeActivity extends AppCompatActivity {
         profile = findViewById(R.id.bProfile);
         profile.setOnClickListener(view -> startProfileActivity());
 
+    }
+
+    public void statsClick(){
+        Intent i = new Intent(this, StatsActivity.class);
+        startActivity(i);
+    }
+    public void historyClick(){
+        Intent i = new Intent(this, HistoryActivity.class);
+        startActivity(i);
     }
 
     public void logoutUser(){

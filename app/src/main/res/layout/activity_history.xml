@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HistoryActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="40sp"
+        android:layout_height="match_parent"
+        android:rowCount="4"
+        android:columnCount="1"
+        >
+
+        <TextView
+            android:id="@+id/header"
+
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="10sp"
+            android:text="Games"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="44sp"></TextView>
+
+        <TextView
+            android:id="@+id/game1"
+            android:textColor="@color/black"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:textSize="22sp"
+            android:text="January 1st, 2021\n\nYou: 18\nSally: 20"
+            android:textAlignment="center"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/game2"
+            android:textColor="@color/black"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:textSize="22sp"
+            android:text="January 2nd, 2021\n\nYou: 26\nSally: 12"
+            android:textAlignment="center"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/game3"
+            android:layout_gravity="fill"
+            android:textColor="@color/black"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:textSize="22sp"
+            android:text="January 2nd, 2021\n\nYou: 16\nSally: 30"
+            android:textAlignment="center"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/view4"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:textSize="18sp"
+            android:text="                 "
+            android:textAlignment="center"
+            >
+        </TextView>
+    </GridLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="1"
+        android:columnCount="2"
+        android:translationY="300dp"
+        >
+        <Button
+            android:id="@+id/hBack"
+            android:text="← back"
+            android:layout_width="wrap_content"
+            android:layout_height="86dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10sp"
+            android:textSize="18sp">
+
+        </Button>
+        <Button
+            android:id="@+id/reset"
+            android:text="reset"
+            android:layout_width="wrap_content"
+            android:layout_height="86dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10sp"
+            android:textSize="18sp">
+
+        </Button>
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
