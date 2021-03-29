@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
     }
-    
+
 
     public void launchNewGame(){
         Intent intent = new Intent(HomeActivity.this, NewGame.class);
