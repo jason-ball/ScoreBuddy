@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScoreBuddy">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:label="Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,16 +22,20 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".HomeActivity">
+        <activity android:name=".HomeActivity" android:label="Home">
         </activity>
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".RegisterActivity" android:label="Register">
         </activity>
-        <activity android:name=".NewGame">
+        <activity android:name=".NewGame" android:label="New Game">
         </activity>
-        <activity android:name=".FriendPage" />
-        <activity android:name=".ProfilePage" />
-        <activity android:name=".StatsActivity" />
-        <activity android:name=".HistoryActivity" />
+        <activity android:name=".FriendPage" android:label="Friends"/>
+        <activity android:name=".ProfilePage" android:label="Profile"/>
+        <activity android:name=".StatsActivity" android:label="Statistics"/>
+        <activity android:name=".HistoryActivity" android:label="History" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
