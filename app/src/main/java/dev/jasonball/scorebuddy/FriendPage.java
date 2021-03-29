@@ -15,12 +15,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 public class FriendPage extends AppCompatActivity
 {
     private ListView listview;
     private String[] list;
+    private Button goHome;
     int i;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,5 +47,17 @@ public class FriendPage extends AppCompatActivity
             }
         });
 
+        goHome = findViewById(R.id.goHomeFriend);
+        goHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goHomeClick();
+            }
+        });
+
+    }
+    public void goHomeClick(){
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
     }
 }
