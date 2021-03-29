@@ -18,7 +18,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/Spike" />
+            android:src="@drawable/spike" />
 
         <TextView
             android:id="@+id/fullname_field"
@@ -66,7 +66,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/goldCrown"/>
+                    android:src="@drawable/goldcrown"/>
                 <TextView
                     android:id="@+id/gwon_label"
                     android:includeFontPadding="false"
@@ -102,7 +102,7 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/Spike"
+                    android:src="@drawable/spike"
                     android:layout_centerHorizontal="true"/>
                 <TextView
                     android:id="@+id/bscore_label"
@@ -142,7 +142,6 @@
             android:background="#7C42B5">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:drawableLeft=""
                 android:drawablePadding="10dp"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent" />
@@ -157,7 +156,6 @@
             android:background="#7C42B5">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:drawableLeft=""
                 android:drawablePadding="10dp"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent" />
@@ -173,7 +171,6 @@
             android:background="#7C42B5">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:drawableLeft=""
                 android:drawablePadding="10dp"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent" />
