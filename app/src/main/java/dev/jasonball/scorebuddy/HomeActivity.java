@@ -13,6 +13,10 @@ public class HomeActivity extends AppCompatActivity {
 
     private Button logout;
     private Button newGame;
+    private Button friends;
+    private Button profile;
+    private Button stats;
+    private Button history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,22 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+         stats = findViewById(R.id.bStatsProgress);
+         stats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                statsClick();
+            }
+        });
+
+        history = findViewById(R.id.bGameHistory);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                historyClick();
+            }
+        });
+
         newGame = findViewById(R.id.bNewGame);
         newGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,11 +54,27 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        friends = findViewById(R.id.bFriends);
+        friends.setOnClickListener(view -> startFriendsActivity());
+
+        profile = findViewById(R.id.bProfile);
+        profile.setOnClickListener(view -> startProfileActivity());
+
+    }
+
+    public void statsClick(){
+        Intent i = new Intent(this, StatsActivity.class);
+        startActivity(i);
+    }
+    public void historyClick(){
+        Intent i = new Intent(this, HistoryActivity.class);
+        startActivity(i);
     }
 
     public void logoutUser(){
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
@@ -46,4 +82,15 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(HomeActivity.this, NewGame.class);
         startActivity(intent);
     }
-} 
+
+
+    private void startFriendsActivity() {
+        Intent intent = new Intent(this, FriendPage.class);
+        startActivity(intent);
+    }
+
+    private void startProfileActivity() {
+        Intent intent = new Intent(this, ProfilePage.class);
+        startActivity(intent);
+    }
+}

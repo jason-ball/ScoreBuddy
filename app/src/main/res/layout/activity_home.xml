@@ -8,72 +8,92 @@
 
     <Button
         android:id="@+id/bNewGame"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="73dp"
-        android:layout_marginBottom="75dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_baseline_golf_course_24"
+        android:drawableTint="@color/white"
         android:text="New Game"
-        app:layout_constraintBottom_toTopOf="@+id/bFriends"
-        app:layout_constraintEnd_toStartOf="@+id/bProfile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textAppearance="@style/TextAppearance.ScoreBuddy.LabelText"
+        app:layout_constraintBottom_toTopOf="@+id/bProfile"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
         android:id="@+id/bFriends"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="76dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_baseline_people_24"
+        android:drawableTint="@color/white"
         android:text="Friends"
-        app:layout_constraintBottom_toTopOf="@+id/bGameHistory"
-        app:layout_constraintEnd_toStartOf="@+id/bStatsProgress"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textAppearance="@style/TextAppearance.ScoreBuddy.LabelText"
+        app:layout_constraintBottom_toTopOf="@+id/bStatsProgress"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/bProfile"
+        app:layout_constraintTop_toBottomOf="@+id/bProfile" />
 
     <Button
         android:id="@+id/bStatsProgress"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="76dp"
-        android:text="Stats and Progress"
-        android:textSize="11dp"
-        app:layout_constraintBottom_toTopOf="@+id/bLogout"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_baseline_bar_chart_24"
+        android:drawableTint="@color/white"
+        android:text="Stats & Progress"
+        android:textAppearance="@style/TextAppearance.ScoreBuddy.LabelText"
+        app:layout_constraintBottom_toTopOf="@+id/bGameHistory"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/bFriends"
+        app:layout_constraintTop_toBottomOf="@+id/bFriends" />
 
     <Button
         android:id="@+id/bLogout"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="140dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_baseline_exit_to_app_24"
+        android:drawableTint="@color/white"
         android:text="Log Out"
+        android:textAppearance="@style/TextAppearance.ScoreBuddy.LabelText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/bGameHistory"
+        app:layout_constraintTop_toBottomOf="@+id/bGameHistory" />
 
     <Button
         android:id="@+id/bGameHistory"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="140dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_baseline_history_24"
+        android:drawableTint="@color/white"
         android:text="Game History"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bLogout"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textAppearance="@style/TextAppearance.ScoreBuddy.LabelText"
+        app:layout_constraintBottom_toTopOf="@+id/bLogout"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/bStatsProgress"
+        app:layout_constraintTop_toBottomOf="@+id/bStatsProgress" />
 
     <Button
         android:id="@+id/bProfile"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="75dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_baseline_person_24"
+        android:drawableTint="@color/white"
         android:text="Profile"
-        app:layout_constraintBottom_toTopOf="@+id/bStatsProgress"
+        android:textAppearance="@style/TextAppearance.ScoreBuddy.LabelText"
+        app:layout_constraintBottom_toTopOf="@+id/bFriends"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/bNewGame"
+        app:layout_constraintTop_toBottomOf="@+id/bNewGame" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:theme="@style/TextAppearance.ScoreBuddy.AppName"
+        app:layout_constraintBottom_toTopOf="@+id/bNewGame"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

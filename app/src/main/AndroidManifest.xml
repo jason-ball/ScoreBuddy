@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dev.jasonball.scorebuddy">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,20 +13,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ScoreBuddy">
-
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@style/Theme.ScoreBuddy.NoActionBar"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:label="Home"></activity>
+        <activity
+            android:name=".NewGame"
+            android:label="New Game"></activity>
+        <activity
+            android:name=".FriendPage"
+            android:label="Friends" />
+        <activity
+            android:name=".ProfilePage"
+            android:label="Profile" />
+        <activity
+            android:name=".StatsActivity"
+            android:label="Statistics" />
+        <activity
+            android:name=".HistoryActivity"
+            android:label="History" />
 
-        <activity android:name=".HomeActivity">
-        </activity>
-
-        <activity android:name=".NewGame">
-        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
