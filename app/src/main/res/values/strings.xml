@@ -24,6 +24,7 @@
     <string name="reset_button">Reset</string>
     <string name="doneButton">Done!</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="app_title">ScoreBuddy</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
