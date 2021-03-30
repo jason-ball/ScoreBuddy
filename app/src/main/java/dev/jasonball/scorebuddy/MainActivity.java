@@ -34,8 +34,23 @@ public class MainActivity extends AppCompatActivity {
     private String userPassword;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null) {
+            // User is signed in
+            Intent i = new Intent(MainActivity.this, HomeActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        } else {
+            // User is signed out
+            Log.d(TAG, "onAuthStateChanged:signed_out");
+        }
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -91,13 +106,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   public void openHomePage(){
+    public void openHomePage(){
         Intent intent = new Intent(this, HomeActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
-   public void reload(){
+    public void reload(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
