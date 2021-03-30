@@ -1,70 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfilePage">
+    tools:context=".ProfilePage"
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="87dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#7C42B5"
+        android:padding="20dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="282dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginTop="196dp"
-        android:text="Jane Doe"
-        android:textSize="35sp" />
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/spike" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="156dp"
+        <TextView
+            android:id="@+id/fullname_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/profile_image"
+            android:includeFontPadding="false"
+            android:text="John Doe"
+            android:textColor="#000"
+            android:textSize="20sp"
+            tools:text="John Doe" />
+
+        <TextView
+            android:id="@+id/username_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fullname_field"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/profile_image"
+            android:includeFontPadding="false"
+            android:text="John_Doe"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="152dp"
-        android:layout_marginBottom="327dp"
-        android:text="45"
-        android:textSize="35sp" />
+        android:layout_marginTop="-100dp"
+        android:padding="20dp">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="90dp"
-        android:layout_height="50dp"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="159dp"
-        android:layout_marginBottom="186dp"
-        android:text="19"
-        android:textSize="35sp" />
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#7C42B5"
+            app:cardElevation="10dp">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/gold_crown"/>
+                <TextView
+                    android:id="@+id/gwon_label"
+                    android:includeFontPadding="false"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="24"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/gwon_desc"
+                    android:includeFontPadding="false"
+                    android:layout_below="@id/gwon_label"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Games Won"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#7C42B5"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/spike"
+                    android:layout_centerHorizontal="true"/>
+                <TextView
+                    android:id="@+id/bscore_label"
+                    android:includeFontPadding="false"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="12"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/payment_desc"
+                    android:includeFontPadding="false"
+                    android:layout_below="@id/bscore_label"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Best Score"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="-4dp"
-        android:text="Best Score:"
-        android:textSize="40sp" />
+        android:padding="20dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_marginTop="-3dp"
-        android:text="Total Games:"
-        android:textSize="40sp" />
-</RelativeLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:hint="Full Name"
+            android:id="@+id/full_name_profile"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:background="#7C42B5">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:drawablePadding="10dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:hint="Username"
+            android:id="@+id/username_profile"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:background="#7C42B5">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:drawablePadding="10dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:hint="Email Address"
+            android:id="@+id/email_profile"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:background="#7C42B5">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:drawablePadding="10dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:background="#7C42B5">
+        </Button>
+    </LinearLayout>
+</LinearLayout>
