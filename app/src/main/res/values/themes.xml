@@ -29,4 +29,8 @@
     <style name="Theme.ScoreBuddy.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.ScoreBuddy.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.ScoreBuddy.Alert" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:textColor">@color/white</item>
+        <item name="colorOnPrimary">#1FC600</item>
+    </style>
 </resources>
