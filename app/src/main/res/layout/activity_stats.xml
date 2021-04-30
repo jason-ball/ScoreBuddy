@@ -10,7 +10,6 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/golf"
         android:backgroundTint="@color/material_on_background_disabled"
         android:columnCount="1"
         android:rowCount="4"
@@ -26,7 +25,7 @@
             android:text="Statistics"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="40sp"
             android:textStyle="bold">
 
@@ -42,8 +41,8 @@
             android:layout_margin="10sp"
             android:text="Best Score:\n15 Points on May 15th, 2020"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="24sp"></TextView>
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/view2"
@@ -55,8 +54,8 @@
             android:layout_margin="10sp"
             android:text="\n\Worst Score:\n50 Points on January 1st, 2021"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="24sp"></TextView>
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/view3"
@@ -68,8 +67,8 @@
             android:layout_margin="10sp"
             android:text="Average Score:\n22.2 points per game"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="24sp"></TextView>
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
     </GridLayout>
     <GridLayout
@@ -81,14 +80,17 @@
         >
         <Button
             android:id="@+id/back_home"
-            android:text="← back"
+            android:text="back"
             android:layout_width="wrap_content"
             android:layout_height="86dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="center_vertical"
             android:layout_margin="10sp"
-            android:textSize="18sp">
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_baseline_arrow_back_24"
+            android:drawableTint="@color/white">
 
         </Button>
         <Button
@@ -100,7 +102,10 @@
             android:layout_columnWeight="1"
             android:layout_gravity="center_vertical"
             android:layout_margin="10sp"
-            android:textSize="18sp">
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_baseline_warning_24"
+            android:drawableTint="@color/white">
 
         </Button>
     </GridLayout>
