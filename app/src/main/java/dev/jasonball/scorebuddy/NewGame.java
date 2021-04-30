@@ -132,24 +132,28 @@ public class NewGame extends AppCompatActivity {
     }
 
     private void openAddScoreDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.Theme_ScoreBuddy_Alert);
         builder.setTitle(getString(R.string.add_score_dialog_title, holeNumber));
 
         final EditText playerA = new EditText(this);
         playerA.setInputType(InputType.TYPE_CLASS_NUMBER);
         playerA.setHint(getString(R.string.add_score_dialog_player_name, playerAName));
+        playerA.setTextColor(getColor(R.color.white));
 
         final EditText playerB = new EditText(this);
         playerB.setInputType(InputType.TYPE_CLASS_NUMBER);
         playerB.setHint(getString(R.string.add_score_dialog_player_name, playerBName));
+        playerB.setTextColor(getColor(R.color.white));
 
         final EditText playerC = new EditText(this);
         playerC.setInputType(InputType.TYPE_CLASS_NUMBER);
         playerC.setHint(getString(R.string.add_score_dialog_player_name, playerCName));
+        playerC.setTextColor(getColor(R.color.white));
 
         final EditText playerD = new EditText(this);
         playerD.setInputType(InputType.TYPE_CLASS_NUMBER);
         playerD.setHint(getString(R.string.add_score_dialog_player_name, playerDName));
+        playerD.setTextColor(getColor(R.color.white));
 
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
