@@ -38,7 +38,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white" />
 
         <EditText
             android:id="@+id/etPassword"
@@ -60,7 +61,8 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="2dp"/>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -78,14 +80,20 @@
             android:layout_height="wrap_content"
             android:drawableTop="@drawable/ic_baseline_login_24"
             android:drawableTint="@color/white"
-            android:text="Login" />
+            android:text="Login"
+            android:textColor="@color/white"
+            android:layout_margin="8dp"/>
 
-        <TextView
+        <Button
             android:id="@+id/tvSignUp"
             android:layout_width="361dp"
             android:layout_height="wrap_content"
             android:text="CREATE A NEW ACCOUNT"
-            android:textAlignment="center" />
+            android:drawableTop="@drawable/ic_baseline_sports_golf_24"
+            android:drawableTint="@color/white"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:layout_margin="8dp"/>
     </LinearLayout>
 
 
