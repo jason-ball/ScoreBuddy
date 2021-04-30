@@ -55,8 +55,8 @@ public class RegisterActivity extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                _email = userEmail.getText().toString();
-                _password = userPassword.getText().toString();
+                _email = userEmail.getText().toString().trim();
+                _password = userPassword.getText().toString().trim();
                 registerUser(_email, _password);
             }
         });
