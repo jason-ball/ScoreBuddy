@@ -11,13 +11,9 @@
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="181dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="178dp"
-        android:layout_marginBottom="131dp"
+        android:layout_marginTop="32dp"
         android:text="Register"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        app:layout_constraintBottom_toTopOf="@+id/etNewEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,42 +23,51 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/etNewPassword"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/etNewPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="62dp"
-        android:ems="10"
+        android:layout_marginTop="16dp"
         android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/bSignUp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/etNewEmail"
+        app:layout_constraintStart_toStartOf="@+id/etNewEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etNewEmail" />
 
     <Button
         android:id="@+id/bSignUp"
-        android:layout_width="307dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="236dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:drawableTop="@drawable/ic_baseline_golf_course_24"
+        android:drawableTint="@color/white"
         android:text="Register"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/etNewPassword"
+        app:layout_constraintStart_toStartOf="@+id/etNewPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etNewPassword" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="64dp"
+        app:tint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tvRegister"
+        app:layout_constraintStart_toStartOf="@+id/tvRegister"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegister"
+        app:srcCompat="@drawable/ic_baseline_golf_course_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,8 @@
         app:layout_constraintBottom_toTopOf="@+id/bProfile"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/bFriends"
@@ -30,7 +31,8 @@
         app:layout_constraintBottom_toTopOf="@+id/bStatsProgress"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/bProfile"
-        app:layout_constraintTop_toBottomOf="@+id/bProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/bProfile"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/bStatsProgress"
@@ -43,7 +45,8 @@
         app:layout_constraintBottom_toTopOf="@+id/bGameHistory"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/bFriends"
-        app:layout_constraintTop_toBottomOf="@+id/bFriends" />
+        app:layout_constraintTop_toBottomOf="@+id/bFriends"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/bLogout"
@@ -56,7 +59,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/bGameHistory"
-        app:layout_constraintTop_toBottomOf="@+id/bGameHistory" />
+        app:layout_constraintTop_toBottomOf="@+id/bGameHistory"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/bGameHistory"
@@ -69,7 +73,8 @@
         app:layout_constraintBottom_toTopOf="@+id/bLogout"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/bStatsProgress"
-        app:layout_constraintTop_toBottomOf="@+id/bStatsProgress" />
+        app:layout_constraintTop_toBottomOf="@+id/bStatsProgress"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/bProfile"
@@ -82,7 +87,8 @@
         app:layout_constraintBottom_toTopOf="@+id/bFriends"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/bNewGame"
-        app:layout_constraintTop_toBottomOf="@+id/bNewGame" />
+        app:layout_constraintTop_toBottomOf="@+id/bNewGame"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/textView4"

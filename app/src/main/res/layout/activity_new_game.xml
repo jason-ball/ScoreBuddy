@@ -222,7 +222,8 @@
         app:layout_constraintEnd_toStartOf="@+id/resetButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Add Hole 5 Score" />
+        tools:text="Add Hole 5 Score"
+        android:textColor="@color/white"/>
 
     <View
         android:id="@+id/scoreDivider"
@@ -324,6 +325,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/addScoreButton"
         app:layout_constraintTop_toTopOf="@+id/addScoreButton"
-        android:onClick="resetButtonPressed"/>
+        android:onClick="resetButtonPressed"
+        android:textColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="#7C42B5"
         android:padding="20dp">
 
         <ImageView
@@ -18,7 +17,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/spike" />
+            android:src="@drawable/ic_baseline_person_24" />
 
         <TextView
             android:id="@+id/fullname_field"
@@ -29,7 +28,7 @@
             android:layout_toRightOf="@+id/profile_image"
             android:includeFontPadding="false"
             android:text="John Doe"
-            android:textColor="#000"
+            android:textColor="@color/white"
             android:textSize="20sp"
             tools:text="John Doe" />
 
@@ -55,7 +54,7 @@
             android:layout_height="125dp"
             android:layout_weight="1"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#7C42B5"
+            app:cardBackgroundColor="?attr/colorPrimary"
             app:cardElevation="10dp">
 
             <RelativeLayout
@@ -66,7 +65,8 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/gold_crown"/>
+                    android:src="@drawable/ic_baseline_star_24"
+                    app:tint="@color/white"/>
                 <TextView
                     android:id="@+id/gwon_label"
                     android:includeFontPadding="false"
@@ -92,7 +92,7 @@
             android:layout_height="125dp"
             android:layout_weight="1"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#7C42B5"
+            app:cardBackgroundColor="?attr/colorPrimary"
             app:cardElevation="10dp">
 
             <RelativeLayout
@@ -102,7 +102,8 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/spike"
+                    android:src="@drawable/ic_baseline_looks_one_24"
+                    app:tint="@color/white"
                     android:layout_centerHorizontal="true"/>
                 <TextView
                     android:id="@+id/bscore_label"
@@ -138,8 +139,7 @@
             android:id="@+id/full_name_profile"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_marginBottom="10dp"
-            android:background="#7C42B5">
+            android:layout_marginBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:drawablePadding="10dp"
@@ -152,8 +152,7 @@
             android:id="@+id/username_profile"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_marginBottom="10dp"
-            android:background="#7C42B5">
+            android:layout_marginBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:drawablePadding="10dp"
@@ -167,8 +166,7 @@
             android:id="@+id/email_profile"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_marginBottom="10dp"
-            android:background="#7C42B5">
+            android:layout_marginBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:drawablePadding="10dp"
