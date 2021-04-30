@@ -248,30 +248,35 @@ public class NewGame extends AppCompatActivity {
         holeNumber.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         holeNumber.setTextAppearance(R.style.TextAppearance_AppCompat_Body1);
         holeNumber.setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+        holeNumber.setTextColor(getColor(R.color.white));
 
         TextView playerA = new TextView(this);
         playerA.setText(String.valueOf(scoreA));
         playerA.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         playerA.setTextAppearance(R.style.TextAppearance_AppCompat_Body1);
         playerA.setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+        playerA.setTextColor(getColor(R.color.white));
 
         TextView playerB = new TextView(this);
         playerB.setText(String.valueOf(scoreB));
         playerB.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         playerB.setTextAppearance(R.style.TextAppearance_AppCompat_Body1);
         playerB.setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+        playerB.setTextColor(getColor(R.color.white));
 
         TextView playerC = new TextView(this);
         playerC.setText(String.valueOf(scoreC));
         playerC.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         playerC.setTextAppearance(R.style.TextAppearance_AppCompat_Body1);
         playerC.setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+        playerC.setTextColor(getColor(R.color.white));
 
         TextView playerD = new TextView(this);
         playerD.setText(String.valueOf(scoreD));
         playerD.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         playerD.setTextAppearance(R.style.TextAppearance_AppCompat_Body1);
         playerD.setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+        playerD.setTextColor(getColor(R.color.white));
 
         row.addView(holeNumber);
         row.addView(playerA);
