@@ -167,24 +167,28 @@ public class NewGame extends AppCompatActivity {
     }
 
     private void openAddScoreDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.Theme_ScoreBuddy_Alert);
         builder.setTitle(getString(R.string.add_score_dialog_title, holeNumber));
 
         final EditText playerA = new EditText(this);
         playerA.setInputType(InputType.TYPE_CLASS_NUMBER);
         playerA.setHint(getString(R.string.add_score_dialog_player_name, playerAName));
+        playerA.setTextColor(getColor(R.color.white));
 
         final EditText playerB = new EditText(this);
         playerB.setInputType(InputType.TYPE_CLASS_NUMBER);
         playerB.setHint(getString(R.string.add_score_dialog_player_name, playerBName));
+        playerB.setTextColor(getColor(R.color.white));
 
         final EditText playerC = new EditText(this);
         playerC.setInputType(InputType.TYPE_CLASS_NUMBER);
         playerC.setHint(getString(R.string.add_score_dialog_player_name, playerCName));
+        playerC.setTextColor(getColor(R.color.white));
 
         final EditText playerD = new EditText(this);
         playerD.setInputType(InputType.TYPE_CLASS_NUMBER);
         playerD.setHint(getString(R.string.add_score_dialog_player_name, playerDName));
+        playerD.setTextColor(getColor(R.color.white));
 
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -279,30 +283,35 @@ public class NewGame extends AppCompatActivity {
         holeNumber.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         holeNumber.setTextAppearance(R.style.TextAppearance_AppCompat_Body1);
         holeNumber.setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+        holeNumber.setTextColor(getColor(R.color.white));
 
         TextView playerA = new TextView(this);
         playerA.setText(String.valueOf(scoreA));
         playerA.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         playerA.setTextAppearance(R.style.TextAppearance_AppCompat_Body1);
         playerA.setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+        playerA.setTextColor(getColor(R.color.white));
 
         TextView playerB = new TextView(this);
         playerB.setText(String.valueOf(scoreB));
         playerB.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         playerB.setTextAppearance(R.style.TextAppearance_AppCompat_Body1);
         playerB.setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+        playerB.setTextColor(getColor(R.color.white));
 
         TextView playerC = new TextView(this);
         playerC.setText(String.valueOf(scoreC));
         playerC.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         playerC.setTextAppearance(R.style.TextAppearance_AppCompat_Body1);
         playerC.setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+        playerC.setTextColor(getColor(R.color.white));
 
         TextView playerD = new TextView(this);
         playerD.setText(String.valueOf(scoreD));
         playerD.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         playerD.setTextAppearance(R.style.TextAppearance_AppCompat_Body1);
         playerD.setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+        playerD.setTextColor(getColor(R.color.white));
 
         row.addView(holeNumber);
         row.addView(playerA);
