@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StatsActivity"
+    android:id="@+id/cl"
     >
 
     <GridLayout
+        android:id="@+id/gl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="@id/cl"
         android:backgroundTint="@color/material_on_background_disabled"
         android:columnCount="1"
         android:rowCount="4"
@@ -42,7 +45,7 @@
             android:text="Best Score:\n15 Points on May 15th, 2020"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textSize="24sp"></TextView>
 
         <TextView
             android:id="@+id/view2"
@@ -55,7 +58,7 @@
             android:text="\n\Worst Score:\n50 Points on January 1st, 2021"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textSize="24sp"></TextView>
 
         <TextView
             android:id="@+id/view3"
@@ -64,19 +67,19 @@
             android:layout_rowWeight="4"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_margin="10sp"
-            android:text="Average Score:\n22.2 points per game"
+            android:layout_margin="0sp"
+            android:text="You're doing great! Keep it going!"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textSize="24sp"></TextView>
 
     </GridLayout>
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:rowCount="1"
-        android:columnCount="2"
-        android:translationY="270dp"
+        android:columnCount="1"
+        android:translationY="280dp"
         >
         <Button
             android:id="@+id/back_home"
@@ -90,21 +93,6 @@
             android:textSize="18sp"
             android:textColor="@color/white"
             android:drawableTop="@drawable/ic_baseline_arrow_back_24"
-            android:drawableTint="@color/white">
-
-        </Button>
-        <Button
-            android:id="@+id/reset"
-            android:text="reset"
-            android:layout_width="wrap_content"
-            android:layout_height="86dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10sp"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:drawableTop="@drawable/ic_baseline_warning_24"
             android:drawableTint="@color/white">
 
         </Button>

@@ -2,123 +2,65 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"
+    android:fillViewport="true"
     tools:context=".HistoryActivity">
 
-    <GridLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/material_on_background_disabled"
-        android:columnCount="1"
-        android:rowCount="4"
-        tools:ignore="MissingConstraints">
+        android:text="History"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/sv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/header"
-            android:layout_width="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="10sp"
-            android:text="Games"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="44sp"></TextView>
 
-        <TextView
-            android:id="@+id/game1"
-            android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/ll2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="10sp"
-            android:text="January 1st, 2021\n\nYou: 18\nSally: 20"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="22sp"></TextView>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/game2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="10sp"
-            android:text="January 2nd, 2021\n\nYou: 26\nSally: 12"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="22sp"></TextView>
 
-        <TextView
-            android:id="@+id/game3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="10sp"
-            android:text="January 2nd, 2021\n\nYou: 16\nSally: 30"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="22sp"></TextView>
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/view4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="10sp"
-            android:text="                 "
-            android:textAlignment="center"
-            android:textSize="18sp"></TextView>
-    </GridLayout>
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_row="0"
-        android:layout_column="4"
-        android:columnCount="2"
-        android:rowCount="1"
-        android:translationY="285dp">
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sv">
 
         <Button
             android:id="@+id/hBack"
             android:layout_width="wrap_content"
-            android:layout_height="86dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10sp"
-            android:text="back"
-            android:drawableTop="@drawable/ic_baseline_arrow_back_24"
-            android:drawableTint="@color/white"
-            android:textColor="@color/white"
-            android:textSize="18sp">
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="                 ← Back                 " />
 
-        </Button>
-
-        <Button
-            android:id="@+id/reset"
-            android:layout_width="wrap_content"
-            android:layout_height="86dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10sp"
-            android:text="reset"
-            android:textSize="18sp"
-            android:drawableTop="@drawable/ic_baseline_warning_24"
-            android:drawableTint="@color/white"
-            android:textColor="@color/white">
-
-        </Button>
-    </GridLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

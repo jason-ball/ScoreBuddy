@@ -54,8 +54,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        friends = findViewById(R.id.bFriends);
-        friends.setOnClickListener(view -> startFriendsActivity());
 
         profile = findViewById(R.id.bProfile);
         profile.setOnClickListener(view -> startProfileActivity());
@@ -82,12 +80,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(HomeActivity.this, NewGame.class);
         startActivity(intent);
     }
-
-
-    private void startFriendsActivity() {
-        Intent intent = new Intent(this, FriendPage.class);
-        startActivity(intent);
-    }
+    
 
     private void startProfileActivity() {
         Intent intent = new Intent(this, ProfilePage.class);
