@@ -4,89 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StatsActivity">
+    tools:context=".StatsActivity"
+    >
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="40sp"
-        android:layout_height="match_parent"
-        android:rowCount="4"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/material_on_background_disabled"
         android:columnCount="1"
-        >
+        android:rowCount="4"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginTop="30sp"
+            android:text="Statistics"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold">
+
+        </TextView>
 
         <TextView
             android:id="@+id/view1"
-            android:textColor="@color/black"
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="10sp"
-            android:textSize="22sp"
-            android:text="\n\n\n\nBest Score:\n15 Points on May 15th, 2020"
+            android:text="Best Score:\n15 Points on May 15th, 2020"
             android:textAlignment="center"
-            >
-        </TextView>
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
         <TextView
             android:id="@+id/view2"
-            android:textColor="@color/black"
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="3"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="10sp"
-            android:textSize="22sp"
-            android:text="\n\n\Worst Score:\n50 Points on January 1st, 2021"
+            android:text="\n\Worst Score:\n50 Points on January 1st, 2021"
             android:textAlignment="center"
-            >
-        </TextView>
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
         <TextView
             android:id="@+id/view3"
-            android:layout_gravity="fill"
-            android:textColor="@color/black"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10sp"
-            android:textSize="22sp"
-            android:text="\nAverage Score:\n22.2 points per game"
-            android:textAlignment="center"
-            >
-        </TextView>
-        <TextView
-            android:id="@+id/view4"
-            android:layout_gravity="fill"
+            android:layout_rowWeight="4"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
             android:layout_margin="10sp"
-            android:textSize="18sp"
-            android:text="                 "
+            android:text="Average Score:\n22.2 points per game"
             android:textAlignment="center"
-            >
-        </TextView>
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
     </GridLayout>
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:rowCount="1"
         android:columnCount="2"
-        android:translationY="300dp"
+        android:translationY="270dp"
         >
         <Button
             android:id="@+id/back_home"
-            android:text="← back"
+            android:text="back"
             android:layout_width="wrap_content"
             android:layout_height="86dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="center_vertical"
             android:layout_margin="10sp"
-            android:textSize="18sp">
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_baseline_arrow_back_24"
+            android:drawableTint="@color/white">
 
         </Button>
         <Button
@@ -98,7 +102,10 @@
             android:layout_columnWeight="1"
             android:layout_gravity="center_vertical"
             android:layout_margin="10sp"
-            android:textSize="18sp">
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_baseline_warning_24"
+            android:drawableTint="@color/white">
 
         </Button>
     </GridLayout>

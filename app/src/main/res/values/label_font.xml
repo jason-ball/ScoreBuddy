@@ -2,5 +2,6 @@
 <resources>
     <style name="TextAppearance.ScoreBuddy.LabelText" parent="TextAppearance.AppCompat">
         <item name="fontFamily">@font/roboto_slab</item>
+        <item name="color">@color/white</item>
     </style>
 </resources>

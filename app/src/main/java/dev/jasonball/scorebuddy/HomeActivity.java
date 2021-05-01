@@ -22,7 +22,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
         logout = findViewById(R.id.bLogout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +82,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(HomeActivity.this, NewGame.class);
         startActivity(intent);
     }
+
 
     private void startFriendsActivity() {
         Intent intent = new Intent(this, FriendPage.class);
