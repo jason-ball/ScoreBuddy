@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StatsActivity"
+    android:id="@+id/cl"
     >
 
     <GridLayout
+        android:id="@+id/gl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="@id/cl"
         android:background="@drawable/golf"
         android:backgroundTint="@color/material_on_background_disabled"
         android:columnCount="1"
@@ -65,8 +68,8 @@
             android:layout_rowWeight="4"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_margin="10sp"
-            android:text="Average Score:\n22.2 points per game"
+            android:layout_margin="0sp"
+            android:text="You're doing great! Keep it going!"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="24sp"></TextView>
@@ -76,24 +79,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:rowCount="1"
-        android:columnCount="2"
-        android:translationY="270dp"
+        android:columnCount="1"
+        android:translationY="280dp"
         >
         <Button
             android:id="@+id/back_home"
             android:text="← back"
-            android:layout_width="wrap_content"
-            android:layout_height="86dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10sp"
-            android:textSize="18sp">
-
-        </Button>
-        <Button
-            android:id="@+id/reset"
-            android:text="reset"
             android:layout_width="wrap_content"
             android:layout_height="86dp"
             android:layout_rowWeight="1"

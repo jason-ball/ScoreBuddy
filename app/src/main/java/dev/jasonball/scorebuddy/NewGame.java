@@ -3,7 +3,8 @@ package dev.jasonball.scorebuddy;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
+import java.io.*;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,6 +52,10 @@ public class NewGame extends AppCompatActivity {
     private int playerCScore;
     private int playerDScore;
 
+    private static ArrayList<String> names = new ArrayList<String>();
+    private static ArrayList<Integer> finalScore = new ArrayList<Integer>();
+    private static ArrayList<GameObject> games = new ArrayList<GameObject>();
+
     List<TableRow> scoreRows = new ArrayList<>();
 
     @Override
@@ -81,6 +87,7 @@ public class NewGame extends AppCompatActivity {
         playerCName = getString(R.string.player_c_default_name);
         playerDName = getString(R.string.player_d_default_name);
 
+        ArrayList<GameObject> games = new ArrayList<GameObject>();
         setHoleNumber(1);
     }
 
@@ -109,6 +116,33 @@ public class NewGame extends AppCompatActivity {
     }
 
     public void resetButtonPressed(View view) {
+        names = new ArrayList<String>();
+        finalScore = new ArrayList<Integer>();
+        if(playerAScoreLabel.getText()!=null)
+            finalScore.add(Integer.parseInt(playerAScoreLabel.getText().toString()));
+        if(playerBScoreLabel.getText()!=null)
+            finalScore.add(Integer.parseInt(playerBScoreLabel.getText().toString()));
+        if(playerCScoreLabel.getText()!=null)
+            finalScore.add(Integer.parseInt(playerCScoreLabel.getText().toString()));
+        if(playerDScoreLabel.getText()!=null)
+            finalScore.add(Integer.parseInt(playerDScoreLabel.getText().toString()));
+
+        if(playerANameLabel.getText()!=null)
+            names.add(playerANameLabel.getText().toString());
+        if(playerANameLabel.getText()!=null)
+            names.add(playerBNameLabel.getText().toString());
+        if(playerANameLabel.getText()!=null)
+            names.add(playerCNameLabel.getText().toString());
+        if(playerANameLabel.getText()!=null)
+            names.add(playerDNameLabel.getText().toString());
+        GameObject g = new GameObject();
+        if(names!=null && finalScore!=null) {
+            g.setPlayers(names);
+            g.setsScores(finalScore);
+        }
+        if(g!=null) {
+            games.add(g);
+        }
         reset();
     }
 
@@ -117,6 +151,7 @@ public class NewGame extends AppCompatActivity {
         setPlayerBName(getString(R.string.player_b_default_name));
         setPlayerCName(getString(R.string.player_c_default_name));
         setPlayerDName(getString(R.string.player_d_default_name));*/
+
 
         setPlayerAScore(0);
         setPlayerBScore(0);
@@ -305,6 +340,15 @@ public class NewGame extends AppCompatActivity {
         } catch(NumberFormatException ex) {
             return defaultValue;
         }
+    }
+    public static ArrayList<Integer> getFinalScore() {
+        return finalScore;
+    }
+    public static ArrayList<String> getNames() {
+        return names;
+    }
+    public static ArrayList<GameObject> getGames() {
+        return games;
     }
 }
 
