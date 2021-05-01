@@ -21,20 +21,6 @@
         android:textColor="@color/white"/>
 
     <Button
-        android:id="@+id/bFriends"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:drawableTop="@drawable/ic_baseline_people_24"
-        android:drawableTint="@color/white"
-        android:text="Friends"
-        android:textAppearance="@style/TextAppearance.ScoreBuddy.LabelText"
-        app:layout_constraintBottom_toTopOf="@+id/bStatsProgress"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="@+id/bProfile"
-        app:layout_constraintTop_toBottomOf="@+id/bProfile"
-        android:textColor="@color/white"/>
-
-    <Button
         android:id="@+id/bStatsProgress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -44,8 +30,8 @@
         android:textAppearance="@style/TextAppearance.ScoreBuddy.LabelText"
         app:layout_constraintBottom_toTopOf="@+id/bGameHistory"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="@+id/bFriends"
-        app:layout_constraintTop_toBottomOf="@+id/bFriends"
+        app:layout_constraintStart_toStartOf="@+id/bProfile"
+        app:layout_constraintTop_toBottomOf="@+id/bProfile"
         android:textColor="@color/white"/>
 
     <Button
@@ -84,7 +70,7 @@
         android:drawableTint="@color/white"
         android:text="Profile"
         android:textAppearance="@style/TextAppearance.ScoreBuddy.LabelText"
-        app:layout_constraintBottom_toTopOf="@+id/bFriends"
+        app:layout_constraintBottom_toTopOf="@+id/bStatsProgress"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/bNewGame"
         app:layout_constraintTop_toBottomOf="@+id/bNewGame"
