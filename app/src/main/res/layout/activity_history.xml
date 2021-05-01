@@ -1,52 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_gravity="center"
-    android:fillViewport="true"
     android:layout_margin="10dp"
+    android:fillViewport="true"
     tools:context=".HistoryActivity">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="History"
+        android:textAlignment="center"
         android:textSize="40dp"
-        android:textAlignment="center"/>
+        app:layout_constraintBottom_toTopOf="@+id/sv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ScrollView
         android:id="@+id/sv"
-        android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_height="575dp">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/ll2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <LinearLayout
             android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
 
         </LinearLayout>
 
     </ScrollView>
+
     <LinearLayout
         android:id="@+id/ll2"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sv">
+
         <Button
             android:id="@+id/hBack"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:text="                 ← Back                 "
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:text="                 ← Back                 " />
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
