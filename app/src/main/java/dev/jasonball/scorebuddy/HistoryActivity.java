@@ -70,7 +70,7 @@ public class HistoryActivity extends AppCompatActivity {
                     t.setText("Player: " + name.get(0) + "      -       Score: " + fin.get(0) + "\nPlayer: " + name.get(1) + "      -       Score:        " + fin.get(1) + "\nPlayer: " + name.get(2) + "     -       Score: " + fin.get(2) +"\n\n");
                 }
                 else if(fin.size()==4) {
-                    t.setText("Player: " + name.get(0) + "      -       Score: " + fin.get(0) + "\nPlayer: " + name.get(1) + "      -       Score:        " + fin.get(1) + "\nPlayer: " + name.get(2) + "     -       Score: " + fin.get(2) + "\nPlayer: " + name.get(2) + "      -       Score: " + fin.get(2)+"\n\n");
+                    t.setText("Player: " + name.get(0) + "      -       Score: " + fin.get(0) + "\nPlayer: " + name.get(1) + "      -       Score:        " + fin.get(1) + "\nPlayer: " + name.get(2) + "     -       Score: " + fin.get(2) + "\nPlayer: " + name.get(3) + "      -       Score: " + fin.get(3)+"\n\n");
                 }
                 else
                     t.setText("No history yet!");
