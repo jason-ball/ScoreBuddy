@@ -56,8 +56,8 @@ public class StatsActivity extends AppCompatActivity {
                 name = game.getPlayers();
                 high = Collections.min(fin);
                 low = Collections.max(fin);
-                t1.setText("Best Score:\n"+low+" Points");
-                t2.setText("Worst Score:\n"+high+" Points");
+                t1.setText("Worst Score:\n"+low+" Points");
+                t2.setText("Best Score:\n"+high+" Points");
             }
         }
         else {
