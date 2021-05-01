@@ -2,124 +2,131 @@ package dev.jasonball.scorebuddy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.common.base.Strings;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
-import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import org.w3c.dom.Text;
+
+import java.util.Objects;
 
 public class ProfilePage extends AppCompatActivity {
+    private static final String TAG = "ProfilePage";
+
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
 
     private TextView mTextView;
-    TextInputLayout fullName, email;
-    TextView fullNameLabel, usernameLabel;
-    String _USERNAME, _NAME, _EMAIL;
-    private Button updateVal;
+    private TextView tVUsersname_field;
+    private TextView tvEmail_view;
+    private EditText eTFullName;
+    private EditText eTUsername;
+    private EditText eTEmail;
+    private Button bUpdate;
 
-    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
-
-        reference = FirebaseDatabase.getInstance().getReference("users");
-
+        tvEmail_view = (TextView) findViewById(R.id.email_field);
+        tvEmail_view.setText(user.getEmail());
         mTextView = (TextView) findViewById(R.id.text);
-        //Hooks
-        fullName = findViewById(R.id.full_name_profile);
-        email = findViewById(R.id.email_profile);
-        usernameLabel = findViewById(R.id.username_field);
-        fullNameLabel = findViewById(R.id.fullname_field);
-        showAllUserData();
-
-        updateVal = findViewById(R.id.updateB);
-        updateVal.setOnClickListener(new View.OnClickListener() {
+        tVUsersname_field = (TextView) findViewById(R.id.fullname_field);
+        tVUsersname_field.setText(user.getDisplayName());
+        eTFullName = (EditText) findViewById(R.id.full_name_profile);
+        eTUsername = (EditText) findViewById(R.id.username_profile);
+        eTEmail = (EditText) findViewById(R.id.email_profile);
+        bUpdate = (Button) findViewById(R.id.update_profile);
+        bUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                update(v);
+                if(user!=null) {
+                    String newName = eTFullName.getText().toString().trim();
+                    String newUN = eTUsername.getText().toString().trim();
+                    String email = eTEmail.getText().toString().trim();
+                    if (newName == null || newUN == null|| email == null) {
+                        Toast.makeText(ProfilePage.this, "Update failed, check info and try again.",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        updateUser(newName, newUN, email);
+                    }
+                }
             }
         });
 
+
         // Enables Always-on
         setAmbientEnabled();
-        showAllUserData();
     }
 
     private void setAmbientEnabled() {
     }
-    private void showAllUserData(){
-        Intent intent = getIntent();
-        _USERNAME = intent.getStringExtra( "username");
-        _NAME = intent.getStringExtra("name");
-        _EMAIL = intent.getStringExtra("email");
 
-        fullNameLabel.setText(_NAME);
-        usernameLabel.setText(_USERNAME);
-        fullName.getEditText().setText(_NAME);
-        email.getEditText().setText(_EMAIL);
+    private void updateUser(String name, String newUserName, String newEmail)
+    {
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(name)
+                .build();
+        if (!Strings.isNullOrEmpty(name)) {
+            user.updateProfile(profileUpdates)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Log.d("", "User profile updated.");
+                            }
+                        }
+                    });
+        }
+        if (!Strings.isNullOrEmpty(newEmail)) {
+            user.updateEmail(newEmail)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Log.d(TAG, "Email Update Successful");
+                            } else {
+                                Log.d(TAG, "Email Update wasn't Successful");
+                            }
+                        }
 
-        String user_username = intent.getStringExtra("username");
-        String user_name = intent.getStringExtra("name");
-        String user_email = intent.getStringExtra("email");
-        fullNameLabel.setText(user_name);
-        usernameLabel.setText(user_username);
-        email.getEditText().setText(user_email);
-    }
-    private void update(View view){
-        if (isNameChanged() || isEmailChanged() || isUsernameChanged())
-        {
-            Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
+                    })
+            .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.e(TAG, e.getMessage());
+                    Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+            });
         }
-        else Toast.makeText(this, "Data is the same and can't updated", Toast.LENGTH_LONG).show();
-    }
+        reload();
+        tVUsersname_field.setText(user.getDisplayName());
+        tvEmail_view.setText(user.getEmail());
 
-    private boolean isNameChanged(){
-        if((fullName.getEditText().getText().toString()) == null || _NAME == null){
-            return false;
-        }
-        if(!_NAME.equals(fullName.getEditText().getText().toString())){
-            reference.child(_NAME).child("name").setValue(fullName.getEditText().getText().toString());
-            _NAME = fullName.getEditText().getText().toString();
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
 
-    private boolean isUsernameChanged(){
-        if((usernameLabel.getText().toString()) == null || _USERNAME == null){
-            return false;
-        }
-        if(!_USERNAME.equals(usernameLabel.getText().toString())){
-            reference.child(_USERNAME).child("username").setValue(usernameLabel.getText().toString());
-            _USERNAME = usernameLabel.getText().toString();
-            return true;
-        }
-        else{
-            return false;
-        }
     }
 
-    private boolean isEmailChanged(){
-        if((email.getEditText().getText().toString()) == null || _EMAIL == null){
-            return false;
-        }
-        if(!_EMAIL.equals(email.getEditText().getText().toString())){
-            reference.child(_USERNAME).child("email").setValue(email.getEditText().getText().toString());
-            _EMAIL = email.getEditText().getText().toString();
-            return true;
-        }
-        else{
-            return false;
-        }
+    public void reload(){
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
     }
-
 }
