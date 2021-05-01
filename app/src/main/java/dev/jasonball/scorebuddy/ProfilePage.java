@@ -3,6 +3,7 @@ package dev.jasonball.scorebuddy;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,6 +20,7 @@ public class ProfilePage extends AppCompatActivity {
     TextInputLayout fullName, email;
     TextView fullNameLabel, usernameLabel;
     String _USERNAME, _NAME, _EMAIL;
+    private Button updateVal;
 
     DatabaseReference reference;
 
@@ -37,8 +39,17 @@ public class ProfilePage extends AppCompatActivity {
         fullNameLabel = findViewById(R.id.fullname_field);
         showAllUserData();
 
+        updateVal = findViewById(R.id.updateB);
+        updateVal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                update(v);
+            }
+        });
+
         // Enables Always-on
         setAmbientEnabled();
+        showAllUserData();
     }
 
     private void setAmbientEnabled() {
@@ -53,9 +64,16 @@ public class ProfilePage extends AppCompatActivity {
         usernameLabel.setText(_USERNAME);
         fullName.getEditText().setText(_NAME);
         email.getEditText().setText(_EMAIL);
+
+        String user_username = intent.getStringExtra("username");
+        String user_name = intent.getStringExtra("name");
+        String user_email = intent.getStringExtra("email");
+        fullNameLabel.setText(user_name);
+        usernameLabel.setText(user_username);
+        email.getEditText().setText(user_email);
     }
     private void update(View view){
-        if (isNameChanged())
+        if (isNameChanged() || isEmailChanged() || isUsernameChanged())
         {
             Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
         }
@@ -63,12 +81,45 @@ public class ProfilePage extends AppCompatActivity {
     }
 
     private boolean isNameChanged(){
-        if(! _NAME.equals(fullName.getEditText().getText().toString())){
-            reference.child(_USERNAME).child("name").setValue(fullName.getEditText().getText().toString());
+        if((fullName.getEditText().getText().toString()) == null || _NAME == null){
+            return false;
+        }
+        if(!_NAME.equals(fullName.getEditText().getText().toString())){
+            reference.child(_NAME).child("name").setValue(fullName.getEditText().getText().toString());
+            _NAME = fullName.getEditText().getText().toString();
             return true;
         }
         else{
             return false;
         }
     }
+
+    private boolean isUsernameChanged(){
+        if((usernameLabel.getText().toString()) == null || _USERNAME == null){
+            return false;
+        }
+        if(!_USERNAME.equals(usernameLabel.getText().toString())){
+            reference.child(_USERNAME).child("username").setValue(usernameLabel.getText().toString());
+            _USERNAME = usernameLabel.getText().toString();
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    private boolean isEmailChanged(){
+        if((email.getEditText().getText().toString()) == null || _EMAIL == null){
+            return false;
+        }
+        if(!_EMAIL.equals(email.getEditText().getText().toString())){
+            reference.child(_USERNAME).child("email").setValue(email.getEditText().getText().toString());
+            _EMAIL = email.getEditText().getText().toString();
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 }

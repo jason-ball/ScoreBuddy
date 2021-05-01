@@ -176,10 +176,10 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/updateB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update"
-            android:background="#7C42B5">
-        </Button>
+            android:background="#7C42B5"
+            android:text="Update"></Button>
     </LinearLayout>
 </LinearLayout>
