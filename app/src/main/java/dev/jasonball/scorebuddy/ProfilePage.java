@@ -54,7 +54,7 @@ public class ProfilePage extends AppCompatActivity {
                     String newName = eTFullName.getText().toString().trim();
                     String newUN = eTUsername.getText().toString().trim();
                     String email = eTEmail.getText().toString().trim();
-                    if (newName == "" || newUN == " " || email == "") {
+                    if (newName == null || newUN == null|| email == null) {
                         Toast.makeText(ProfilePage.this, "Update failed, check info and try again.",
                                 Toast.LENGTH_SHORT).show();
                     } else {
